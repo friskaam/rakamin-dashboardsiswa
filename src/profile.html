@@ -115,7 +115,7 @@
     <div class="flex bg-white">
 
         <!-- sidebar -->
-        <aside id="sidebar" class="mt-4 bg-white md:block hidden relative md:relative px-6 w-96">
+        <aside id="sidebar" class="mt-4 bg-white md:block hidden relative md:relative px-6 w-64">
             <ul>
                 <li>
                     <a href="index.html" class="flex items-center px-4 py-3 hover:bg-gray-100">
@@ -136,7 +136,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="setting.html" class="flex items-center text-gray-700 hover:bg-gray-100 rounded px-4 py-3">
+                    <a href="#" class="flex items-center text-gray-700 hover:bg-gray-100 rounded px-4 py-3">
                         <box-icon name='cog'></box-icon>
                         <span class="ml-3">Settings</span>
                     </a>
@@ -153,27 +153,30 @@
 
         <!-- main section -->
         <main class="grid-cols-1 lg:grid-cols-5 bg-white">
-            <div class="rounded mt-2 p-3 bg-white">
+            <div class="rounded mt-2 p-3 bg-white justify-center">
                 <div class="flex justify-between">
                     <h2 class="text-lg sm:text-xl md:text-xl font-bold mb-4">Profile</h2>
                 </div>
                 <div
                     class="bg-gradient-to-t from-orange-200 to-orange-100 rounded-lg p-6 mb-6 shadow-md border hover:border-orange-600 w-full max-w-4xl mx-auto">
-                    <div class="flex">
+                    <div class="flex flex-col sm:flex-row mb-4"> <!-- Changed to flex-col for small screens -->
                         <!-- Profile Picture -->
-                        <img src="../public/profile.jpeg" alt="Profile Picture" class="w-32 h-32 object-cover rounded-lg">
-            
+                        <div class="flex justify-center mb-4 sm:mb-0">
+                            <!-- Added mb-4 for spacing on small screens -->
+                            <img src="../public/profile.jpeg" alt="Profile Picture" class="w-32 h-32 object-cover rounded-lg">
+                        </div>
+        
                         <!-- Form Section -->
-                        <div class="flex-1 ml-4">
+                        <div class="flex-1 ml-0 sm:ml-4"> <!-- Set ml-0 for small screens, ml-4 for larger screens -->
                             <form class="mx-4">
-                                <div class="flex">
-                                    <div class="mb-4 mr-4">
+                                <div class="flex flex-col sm:flex-row">
+                                    <div class="mb-4 sm:mr-4 flex-1">
                                         <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
                                         <input type="text" id="name"
                                             class="mt-1 block w-full rounded-md shadow-sm focus:outline-none focus:bg-white focus:ring-2 focus:ring-orange-400 p-1"
                                             placeholder="Enter your name" required>
                                     </div>
-                                    <div class="mb-4">
+                                    <div class="mb-4 flex-1"> 
                                         <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
                                         <input type="email" id="email"
                                             class="mt-1 block w-full rounded-md shadow-sm focus:outline-none focus:bg-white focus:ring-2 focus:ring-orange-400 px-2 py-1"
@@ -181,13 +184,15 @@
                                     </div>
                                 </div>
                                 <div class="mb-4">
-                                    <label for="old-password" class="block text-sm font-medium text-gray-700">Old Password</label>
+                                    <label for="old-password" class="block text-sm font-medium text-gray-700">Old
+                                        Password</label>
                                     <input type="password" id="old-password"
                                         class="mt-1 block w-full rounded-md shadow-sm focus:outline-none focus:bg-white focus:ring-2 focus:ring-orange-400 px-2 py-1"
                                         placeholder="Enter old password" required>
                                 </div>
                                 <div class="mb-4">
-                                    <label for="new-password" class="block text-sm font-medium text-gray-700">New Password</label>
+                                    <label for="new-password" class="block text-sm font-medium text-gray-700">New
+                                        Password</label>
                                     <input type="password" id="new-password"
                                         class="mt-1 block w-full rounded-md shadow-sm focus:outline-none focus:bg-white focus:ring-2 focus:ring-orange-400 px-2 py-1"
                                         placeholder="Enter new password" required>
@@ -214,9 +219,9 @@
                         </div>
                     </div>
                 </div>
-            
             </div>
         </main>
+
 
     </div>
 
@@ -232,11 +237,11 @@
             <box-icon name='book'
                 class="hover:fill-current transition-transform transform group-hover:scale-110"></box-icon>
         </a>
-        <a href="profile.html" class="flex flex-col items-center text-gray-700 hover:text-orange-500 group">
+        <a href="profile.html" class="flex flex-col items-center text-orange-500 hover:text-orange-500 group">
             <box-icon name='user'
                 class="hover:fill-current transition-transform transform group-hover:scale-110"></box-icon>
         </a>
-        <a href="setting.html" class="flex flex-col items-center text-gray-700 hover:text-orange-500 group">
+        <a href="#" class="flex flex-col items-center text-gray-700 hover:text-orange-500 group">
             <box-icon name='cog'
                 class="hover:fill-current transition-transform transform group-hover:scale-110"></box-icon>
         </a>
@@ -246,64 +251,6 @@
     <script src="script.js"></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script src="https://uicdn.toast.com/calendar/latest/toastui-calendar.js"></script>
-    <script>
-        const data = {
-            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
-            datasets: [{
-                label: 'Time Spent (hours)',
-                data: [8, 2, 4, 6, 8, 3, 6, 12, 7, 18],
-                backgroundColor: [
-                    'rgba(255, 165, 0, 0.2)',
-                ],
-                borderColor: [
-                    'rgba(255, 165, 0, 1)',
-                ],
-                borderWidth: 1,
-                barThickness: 30,
-                maxBarThickness: 40,
-            }]
-        };
-
-        const config = {
-            type: 'bar', // or 'line', 'pie', etc.
-            data: data,
-            options: {
-                scales: {
-                    x: {
-                        stacked: true,
-                        categoryPercentage: 0.5,
-                        barPercentage: 0.5
-                    },
-                    y: {
-                        beginAtZero: true,
-                        ticks: {
-                            stepSize: 4
-                        }
-                    }
-                }
-            }
-        };
-
-        const timeSpendingChart = new Chart(
-            document.getElementById('timeSpendingChart'),
-            config
-        );
-
-        const Calendar = tui.Calendar;
-
-        const calendar = new Calendar('#calendar', {
-            defaultView: 'month',
-            taskView: ['time'],
-            scheduleView: ['time'],
-            template: {
-                month: {
-                    dayname: function (day) {
-                        return day;
-                    }
-                }
-            }
-        });
-    </script>
 
 </body>
 

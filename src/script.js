@@ -15,7 +15,6 @@ window.addEventListener('click', (event) => {
     }
 });
 
-
 // sidebar
 const hamburger = document.getElementById('hamburger');
 const sidebar = document.getElementById('sidebar');
@@ -23,3 +22,22 @@ const sidebar = document.getElementById('sidebar');
 hamburger.addEventListener('click', () => {
     sidebar.classList.toggle('hidden');
 });
+
+// sticky header & navbar
+let lastScrollTop = 0;
+const header = document.getElementById('header');
+const nav = document.getElementById('nav');
+
+window.onscroll = function () {
+  const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+  if (currentScrollTop > lastScrollTop) {
+    header.classList.add('translate-y-[-100%]'); 
+    navbar.style.transform = 'translateY(100%)'; 
+  } else {
+    header.classList.remove('translate-y-[-100%]');
+    navbar.style.transform = 'translateY(0)';
+  }
+
+  lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
+};

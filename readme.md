@@ -19,4 +19,3 @@ The **Dashboard Siswa** is a static dashboard platform designed to simplify acad
 - **JavaScript**: For dynamic content and interactivity.
 - **Tailwind CSS**: A utility-first CSS framework for designing responsive layouts.
 - **Chart.js**: Used for data visualization in grade tracking and analytics.
-- **Chart.js**: Used for data visualization in grade tracking and analytics.
